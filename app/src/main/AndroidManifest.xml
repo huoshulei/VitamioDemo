@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".demoDVideoBuffer.VideoBufferActivity">
         </activity>
+        <activity android:name=".demoEMyVideoView.CustomVideoViewActivity">
+        </activity>
     </application>
 
 </manifest>

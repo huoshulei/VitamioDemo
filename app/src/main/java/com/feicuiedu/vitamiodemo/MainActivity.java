@@ -12,6 +12,7 @@ import com.feicuiedu.vitamiodemo.demoAAndroidVideoView.AndroidVideoViewActivity;
 import com.feicuiedu.vitamiodemo.demoBVitamioVideoView.VitamioVideoViewActivity;
 import com.feicuiedu.vitamiodemo.demoCMediaController.MediaControllerActivity;
 import com.feicuiedu.vitamiodemo.demoDVideoBuffer.VideoBufferActivity;
+import com.feicuiedu.vitamiodemo.demoEMyVideoView.CustomVideoViewActivity;
 
 // 实践操作, 从GitHub上Clone一份当前代码
 // 实践操作, 从GitHub上Clone一份当前代码
@@ -41,7 +42,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 "Android VideoView",
                 "Vitamio VideoView",
                 "Vitamio MediaController",
-                "Vitamio Buffer"
+                "Vitamio Buffer",
+                "Vitamio MediaPlayer+SurfaceView"
         };
         listView = (ListView) findViewById(R.id.listview);
         adapter = new ArrayAdapter<String>(
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 3:
                 intent.setClass(this, VideoBufferActivity.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent.setClass(this, CustomVideoViewActivity.class);
                 startActivity(intent);
                 break;
         }
