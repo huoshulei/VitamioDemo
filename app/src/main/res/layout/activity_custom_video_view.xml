@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.feicuiedu.vitamiodemo.demoEMyVideoView.CustomVideoViewActivity">
 
-
     <com.feicuiedu.vitamiodemo.demoEMyVideoView.CustomVideoView
         android:id="@+id/customVideoView"
         android:layout_width="match_parent"
