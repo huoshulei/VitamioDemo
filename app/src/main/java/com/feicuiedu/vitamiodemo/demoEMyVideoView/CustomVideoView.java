@@ -72,12 +72,9 @@ public class CustomVideoView extends RelativeLayout implements SurfaceHolder.Cal
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
-    }
-
-    @Override public void surfaceCreated(SurfaceHolder holder) {
         try {
             mediaPlayer = new MediaPlayer();
-            mediaPlayer.setDisplay(holder);
+            mediaPlayer.setDisplay(surfaceHolder);
             mediaPlayer.setDataSource(VideoUrlRes.getTestVideo1());
             mediaPlayer.prepareAsync(); // 异步
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -88,6 +85,10 @@ public class CustomVideoView extends RelativeLayout implements SurfaceHolder.Cal
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override public void surfaceCreated(SurfaceHolder holder) {
+
     }
 
     @Override public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {

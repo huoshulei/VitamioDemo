@@ -6,9 +6,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // 当前项目要用到APT插件(ButterKnife里用到了，自动生成代码)
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 

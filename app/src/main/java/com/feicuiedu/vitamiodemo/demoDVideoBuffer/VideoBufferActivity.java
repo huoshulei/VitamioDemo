@@ -9,6 +9,9 @@ import android.widget.TextView;
 import com.feicuiedu.vitamiodemo.R;
 import com.feicuiedu.vitamiodemo.VideoUrlRes;
 
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
@@ -17,21 +20,24 @@ public class VideoBufferActivity extends AppCompatActivity implements
         MediaPlayer.OnInfoListener,
         MediaPlayer.OnBufferingUpdateListener,
         MediaPlayer.OnPreparedListener {
-    private VideoView videoView;
-    private TextView tvDownloadRate;
-    private TextView tvLoadRate;
-    private ProgressBar progressBar;
+
+    @BindView(R.id.videoView) VideoView videoView;
+    @BindView(R.id.tvDownloadRate) TextView tvDownloadRate;
+    @BindView(R.id.tvLoadRate) TextView tvLoadRate;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
+
+    @BindString(R.string.app_name)String appName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("VideoBuffer");
         setContentView(R.layout.activity_video_buffer);
-        videoView = (VideoView) findViewById(R.id.videoView);
-        tvDownloadRate = (TextView) findViewById(R.id.tvDownloadRate);
-        tvLoadRate = (TextView) findViewById(R.id.tvLoadRate);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
+        ButterKnife.bind(this);
+//        videoView = (VideoView) this.findViewById(R.id.videoView);
+//        tvDownloadRate = (TextView) this.findViewById(R.id.tvDownloadRate);
+//        tvLoadRate = (TextView) this.findViewById(R.id.tvLoadRate);
+//        progressBar = (ProgressBar) this.findViewById(R.id.progressBar);
         playVideo(); // alt+enten
     }
 
